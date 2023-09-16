@@ -1,0 +1,11 @@
+created:
+    - database/factories/VehicleFactory.php
+    - database/factories/RecordFactory.php
+    - database/migrations/2023_09_16_031921_create_vehicles_table.php
+    - database/migrations/2023_09_16_031922_create_records_table.php
+    - app/Models/Vehicle.php
+    - app/Models/Record.php
+models:
+    User: {  }
+    Vehicle: { plate: 'string unique', type: string, relationships: { hasMany: Record } }
+    Record: { vehicle_id: id, leave_at: 'timestamp nullable', total: 'decimal:8,2 nullable' }
